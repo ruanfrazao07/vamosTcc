@@ -35,11 +35,6 @@ class frmLogin : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        binding.btnCriarUsuario.setOnClickListener{
-            val intent = Intent(this, frmCadastro::class.java)
-            startActivity(intent)
-        }
-
         binding.btnEntrar.setOnClickListener {view ->
             val email = binding.edtEmail.text.toString()
             val senha = binding.edtSenha.text.toString()
@@ -78,7 +73,12 @@ class frmLogin : AppCompatActivity() {
 
 
         binding.btnRecuperarSenha.setOnClickListener{
-            val intent = Intent(this, telaRecuperarSenha::class.java)
+            val IrParaRecuperarSenha = Intent(this, telaRecuperarSenha::class.java)
+            startActivity(IrParaRecuperarSenha)
+        }
+
+        binding.btnCriarUsuario.setOnClickListener{
+            val intent = Intent(this, frmCadastro::class.java)
             startActivity(intent)
         }
 
